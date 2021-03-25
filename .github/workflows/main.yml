@@ -1,21 +1,18 @@
 on:
   push:
-   branches: [ master ]
-
-name: 🚀 Deploy FTP 🚀
-jobs: 
+    branches: [ master ]
+name: 🚀 DEPLOY WEBSITE
+jobs:
   web-deploy:
-    name:  Deploy
-    run-on: ubuntu-latest
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
     steps:
-    - name: Obtendo Origin Master
-    uses: actions/checkout@v2.3.2
-
-    - name: Sincronizando Arquivos
+    - name: 🚚 OBTENDO ORIGIN MASTER
+      uses: actions/checkout@v2.3.2
+    
+    - name: 📂 SINCRONIZANDO ARQUIVOS
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp://lupustech.dev
+        server: ftp.lupustech.dev
         username: u815403761.aula
         password: ${{ secrets.ftp_password }}
-
-
